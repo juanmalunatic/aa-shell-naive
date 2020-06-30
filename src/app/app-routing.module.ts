@@ -5,11 +5,6 @@ import { Sample1Component } from './sample1/sample1.component';
 import { Sample2Component } from './sample2/sample2.component';
 
 const routes: Routes = [
-  // Override the base url "/" with a component
-  {
-    path: '',
-    component: Sample1Component
-  },
   {
     path: 'sample-one',
     component: Sample1Component,
@@ -17,6 +12,16 @@ const routes: Routes = [
   {
     path: 'sample-two',
     component: Sample2Component,
+  },
+  {
+    path: 'auto-attendant',
+    loadChildren: () => import('./auto-attendant/auto-attendant.module').then(m => m.AutoAttendantModule)
+  },
+  // Override the base url "/" with a component
+  {
+    path: '',
+    loadChildren: () => import('./auto-attendant/auto-attendant.module').then(m => m.AutoAttendantModule),
+    pathMatch: 'full'
   }
 ]
 
