@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from '../app.component';
-import { Sample1Component } from '../sample1/sample1.component';
-import { Sample2Component } from '../sample2/sample2.component';
-
+//import { AppComponent } from '../app.component';
+import { Sample1Component } from './sample1/sample1.component';
+import { Sample2Component } from './sample2/sample2.component';
 
 const routes: Routes = [
   // Override the base url "/" with a component
